@@ -8,8 +8,8 @@ function ImageComponent(props) {
 
     useEffect(() => {
         async function fetchData() {
-            const result = await axios('https://pixabay.com/api/?key=7800072-61da03e5f9a4b085174c2f98f');
-            console.log(result);
+            const result = await axios('https://pixabay.com/api/?key=7800072-61da03e5f9a4b085174c2f98f&lang=bg');
+            // console.log(result);
 
             setData(result.data);
         };
@@ -29,7 +29,8 @@ function ImageComponent(props) {
                     data.hits.map(item => (
                         <ImageModel key={item.id} image={item.largeImageURL}
                             views={item.views} favorites={item.favorites} likes={item.likes}
-                            downloads={item.downloads} />
+                            downloads={item.downloads} tags={item.tags} username={item.user}
+                            userImage={item.userImageURL} />
                     ))
                 }
             </div>
