@@ -9,7 +9,7 @@ function ImageComponent(props) {
     useEffect(() => {
         async function fetchData() {
             const result = await axios('https://pixabay.com/api/?key=7800072-61da03e5f9a4b085174c2f98f');
-            // console.log(result);
+            console.log(result);
 
             setData(result.data);
         };
@@ -19,9 +19,8 @@ function ImageComponent(props) {
     return (
         <>
             <div className="d-flex">
-                <h3>Images</h3>
+                <h3>Images ({data.total})</h3>
                 <h3 className="ml-auto">Icons</h3>
-
             </div>
             <hr />
 
