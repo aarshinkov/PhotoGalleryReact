@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import ImageModel from '../models/ImageModel';
+import NumberFormat from 'react-number-format';
 
 function ImageComponent(props) {
 
@@ -19,7 +20,9 @@ function ImageComponent(props) {
     return (
         <>
             <div className="d-flex">
-                <h3>Images ({data.total})</h3>
+                <h3>Images (<NumberFormat value={data.total} displayType={'text'}
+                    thousandSeparator={" "} isNumericString={true}
+                    renderText={value => <>{value}</>} />)</h3>
                 <h3 className="ml-auto">Icons</h3>
             </div>
             <hr />
