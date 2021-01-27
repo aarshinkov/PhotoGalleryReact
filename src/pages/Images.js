@@ -1,28 +1,28 @@
-import ImageModel from "../models/ImageModel";
+import React from 'react';
+import Filter from '../components/FilterComponent';
+import ImageComponent from '../components/ImageComponent';
 
-function Images(props) {
+function Images() {
 
-    const images = [
-        { id: 233, image: 'https://cdn.pixabay.com/photo/2021/01/05/11/19/bled-5890874_960_720.jpg' },
-        { id: 234, image: 'https://cdn.pixabay.com/photo/2021/01/04/10/30/tree-5887086_960_720.jpg' }
-    ];
-
-    const getImages = () => {
-        const imagesList = images.map(image => {
-            return <ImageModel
-                key={image.id}
-                image={image.image}
-            />
-        })
-        return imagesList;
-    }
+    // const getImages = () => {
+    //     const imagesList = imagesArray.map(image => {
+    //         return <ImageModel
+    //             key={image.id}
+    //             image={image.image}
+    //         />
+    //     })
+    //     return imagesList;
+    // }
 
     return (
-        <div className="container">
-            <div className="row">
-                {getImages()}
+        <>
+            <div className="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2 mb-4">
+                <Filter />
             </div>
-        </div>
+            <div className="col-12 col-sm-7 col-md-8 col-lg-9 col-xl-10">
+                <ImageComponent />
+            </div>
+        </>
     );
 }
 

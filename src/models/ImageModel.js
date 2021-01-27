@@ -1,17 +1,21 @@
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 const ImageModel = (props) => {
     return (
-        <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-            <Card>
+        <div className="col-12 col-lg-6 col-xl-4 mb-4">
+            <Card className="shadow-sm">
                 <Card.Img variant="top" src={props.image} />
                 <Card.Body>
-                    <Card.Title>{props.image}</Card.Title>
+                    {/* <Card.Title>Test</Card.Title> */}
                     <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                        <span title="Views">{props.views}</span>
+                        <span className="mx-1">&bull;</span>
+                        <span title="Favorites">{props.favorites}</span>
+                        <span className="mx-1">&bull;</span>
+                        <span title="Likes">{props.likes}</span>
+                        <span className="mx-1">&bull;</span>
+                        <span title="Downloads">{props.downloads}</span>
+                    </Card.Text>
                 </Card.Body>
             </Card>
         </div>
