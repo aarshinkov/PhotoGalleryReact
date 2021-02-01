@@ -2,7 +2,8 @@ import { Card, Image } from 'react-bootstrap';
 
 const ImageModel = (props) => {
     return (
-        <div className="col-12 col-lg-6 col-xl-4 mb-4">
+        // <div className="col-12 col-lg-6 col-xl-4 mb-4">
+        <div className="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
             <Card className="shadow-sm">
                 <Card.Img variant="top" src={props.image} />
                 <Card.Body>

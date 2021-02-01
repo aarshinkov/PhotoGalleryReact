@@ -10801,4 +10801,36 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+
+.red-text {
+  color: #f44336;
+}
+
+.orange-text {
+  color: #ff9800;
+}
+
+.green-text {
+  color: #4caf50;
+}
+
+.cyan-text {
+  color: #00bcd4;
+}
+
+.blue-text {
+  color: #2196f3;
+}
+
+.purple-text {
+  color: #9c27b0;
+}
+
+.pink-text {
+  color: #e91e63;
+}
+
+.brown-text {
+  color: #795548;
+}
 /*# sourceMappingURL=styles.css.map */
