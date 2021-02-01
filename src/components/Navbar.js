@@ -13,8 +13,8 @@ function CustomNavbar(props) {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/">Images</Nav.Link>
-                        <Nav.Link href="/home">Home</Nav.Link>
+                        <Nav.Link href="/">Снимки</Nav.Link>
+                        <Nav.Link href="/home">Пример</Nav.Link>
                         {/* <Nav.Link href="#link">Link</Nav.Link> */}
                     </Nav>
                 </Navbar.Collapse>

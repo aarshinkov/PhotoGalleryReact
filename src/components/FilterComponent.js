@@ -4,7 +4,7 @@ function Filter() {
     return (
         <>
             <div className="d-flex">
-                <h3>Filter</h3>
+                <h3>Филтър</h3>
             </div>
             <hr />
             <div class="card">

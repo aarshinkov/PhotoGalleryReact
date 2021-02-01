@@ -20,10 +20,10 @@ function ImageComponent(props) {
     return (
         <>
             <div className="d-flex">
-                <h3>Images (<NumberFormat value={data.total} displayType={'text'}
+                <h3>Снимки (<NumberFormat value={data.total} displayType={'text'}
                     thousandSeparator={" "} isNumericString={true}
                     renderText={value => <>{value}</>} />)</h3>
-                <h3 className="ml-auto">Icons</h3>
+                <h3 className="ml-auto">Икони</h3>
             </div>
             <hr />
 
