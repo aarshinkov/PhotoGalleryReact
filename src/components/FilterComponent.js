@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import LangFilter from '../filters/LangFilter';
 import CategoryFilter from '../filters/CategoryFilter';
 import { Button } from 'react-bootstrap';
@@ -9,18 +9,27 @@ const Filter = (props) => {
 
     const selectedLang = useSelector(state => state.selectedLang);
     const selectedCategory = useSelector(state => state.selectedCategory);
+
     const dispatch = useDispatch();
 
-    const loadImages = useCallback(() => {
+    const loadImages = () => {
         dispatch(getImages({
             lang: selectedLang,
             category: selectedCategory
         }));
-    }, [dispatch, selectedLang, selectedCategory]);
+    }
+    // const loadImages = useCallback(() => {
+    //     dispatch(getImages({
+    //         lang: selectedLang,
+    //         category: selectedCategory
+    //     }));
+    // }, [dispatch, selectedLang, selectedCategory]);
 
     useEffect(() => {
         loadImages();
-    }, [loadImages]);
+
+        // eslint-disable-next-line
+    }, []);
 
 
     return (
@@ -34,7 +43,7 @@ const Filter = (props) => {
                     <LangFilter />
                     <CategoryFilter />
 
-                    <Button variant="primary">Филтрирай</Button>
+                    <Button variant="primary" onClick={loadImages}>Филтрирай</Button>
                 </div>
             </div>
         </>

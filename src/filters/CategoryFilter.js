@@ -2,11 +2,11 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 
 import { setSelectedCategory } from '../redux/actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CategoryFilter = (props) => {
 
-    const selectedCategory = "";
+    const selectedCategory = useSelector(state => state.selectedCategory);
     const dispatch = useDispatch();
 
     const changeSelectedCategory = (event) => {
