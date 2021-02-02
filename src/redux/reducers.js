@@ -22,4 +22,14 @@ function selectedLang(state = 'bg', action) {
     }
 }
 
-export default combineReducers({ images, selectedLang });
+function selectedCategory(state = '', action) {
+    switch (action.type) {
+        case actions.SET_SELECTED_CATEGORY: {
+            return action.payload;
+        }
+        default:
+            return state;
+    }
+}
+
+export default combineReducers({ images, selectedLang, selectedCategory });

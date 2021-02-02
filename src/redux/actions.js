@@ -17,3 +17,7 @@ export const getImages = params => async dispatch => {
 export function setSelectedLang(year) {
     return { type: actions.SET_SELECTED_LANG, payload: year }
 }
+
+export function setSelectedCategory(category) {
+    return { type: actions.SET_SELECTED_CATEGORY, payload: category }
+}

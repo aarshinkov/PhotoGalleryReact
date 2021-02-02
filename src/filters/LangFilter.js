@@ -6,14 +6,16 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const LangFilter = (props) => {
 
-    const selectedLang = useSelector(state => state.selectedLang)
+    const selectedLang = useSelector(state => state.selectedLang);
+    const selectedCategory = useSelector(state => state.selectedCategory);
     const dispatch = useDispatch();
 
     const loadImages = useCallback(() => {
         dispatch(getImages({
-            lang: selectedLang
+            lang: selectedLang,
+            category: selectedCategory
         }));
-    }, [dispatch, selectedLang]);
+    }, [dispatch, selectedLang, selectedCategory]);
 
     useEffect(() => {
         loadImages();

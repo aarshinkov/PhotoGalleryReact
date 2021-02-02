@@ -1,5 +1,6 @@
 import React from 'react';
 import LangFilter from '../filters/LangFilter';
+import CategoryFilter from '../filters/CategoryFilter';
 // import { useSelector, useDispatch } from 'react-redux';
 
 function Filter() {
@@ -14,9 +15,10 @@ function Filter() {
                 <h3>Филтър</h3>
             </div>
             <hr />
-            <div class="card">
-                <div class="card-body">
+            <div className="card">
+                <div className="card-body">
                     <LangFilter />
+                    <CategoryFilter />
                 </div>
             </div>
         </>
