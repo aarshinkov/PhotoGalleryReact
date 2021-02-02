@@ -12,4 +12,14 @@ function images(state = [], action) {
     }
 }
 
-export default combineReducers({ images });
+function selectedLang(state = 'bg', action) {
+    switch (action.type) {
+        case actions.SET_SELECTED_LANG: {
+            return action.payload;
+        }
+        default:
+            return state;
+    }
+}
+
+export default combineReducers({ images, selectedLang });

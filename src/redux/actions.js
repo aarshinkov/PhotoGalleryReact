@@ -13,3 +13,7 @@ export const getImages = params => async dispatch => {
         console.log(error)
     }
 }
+
+export function setSelectedLang(year) {
+    return { type: actions.SET_SELECTED_LANG, payload: year }
+}
