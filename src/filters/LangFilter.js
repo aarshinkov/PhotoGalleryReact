@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { Form } from 'react-bootstrap';
 
 import { getImages, setSelectedLang } from '../redux/actions';
@@ -9,11 +9,11 @@ const LangFilter = (props) => {
     const selectedLang = useSelector(state => state.selectedLang)
     const dispatch = useDispatch();
 
-    const loadImages = () => {
+    const loadImages = useCallback(() => {
         dispatch(getImages({
-            lang: selectedLang,
+            lang: selectedLang
         }));
-    }
+    }, [dispatch, selectedLang]);
 
     useEffect(() => {
         loadImages();
