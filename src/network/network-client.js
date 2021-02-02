@@ -39,17 +39,17 @@ const networkClient = {
     },
 
     request: (options = {}) => {
-        if (!options.url) {
-            console.log('URL is required');
-            return;
-        }
+        // if (!options.url) {
+        //     console.log('URL is required');
+        //     return;
+        // }
 
         const data = Object.assign({
             method: 'get',
             baseURL: constants.baseUrl,
         }, options);
 
-        data.params = Object.assign({}, options.params, {api_key: constants.apiKey});
+        data.params = Object.assign({}, options.params, {key: constants.apiKey});
 
         return new Promise((resolve, reject) => {
             axios(data)

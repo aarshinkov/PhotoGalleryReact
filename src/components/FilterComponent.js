@@ -124,7 +124,7 @@ function Filter() {
                         </div>
                     </div>
 
-                    <a id="applyBtn" href="#" class="btn btn-primary btn-sm btn-round ml-0">Филтрирай</a>
+                    <a id="applyBtn" href="https://google.com" class="btn btn-primary btn-sm btn-round ml-0">Филтрирай</a>
                 </div>
             </div>
         </>

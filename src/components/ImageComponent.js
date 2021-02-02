@@ -1,26 +1,47 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import ImageModel from '../models/ImageModel';
 import NumberFormat from 'react-number-format';
+import networkClient from '../network/network-client';
 
 function ImageComponent(props) {
 
-    const [data, setData] = useState({ hits: [] });
+    const [images, setImages] = useState([]);
+    const [imagesCount, setImagesCount] = useState(0);
+
+    const loadImages = () => {
+        networkClient.get('', {},
+            response => {
+                setImages(response.hits);
+                setImagesCount(response.total);
+            },
+            error => {
+                console.log(error);
+            });
+        // axios.get(`${constants.baseUrl}?key=${constants.apiKey}&id=5937499`)
+        //     .then((response) => {
+        //         console.log(response.data.hits[0]);
+        //         setImageTags(response.data.hits[0].tags);
+        //     });
+    }
 
     useEffect(() => {
-        async function fetchData() {
-            const result = await axios('https://pixabay.com/api/?key=7800072-61da03e5f9a4b085174c2f98f&lang=bg');
-            // console.log(result);
-
-            setData(result.data);
-        };
-        fetchData();
+        loadImages();
     }, []);
+
+    const getImages = () => {
+        const imagesList = images.map(image => {
+            return <ImageModel key={image.id} image={image.largeImageURL}
+                views={image.views} favorites={image.favorites} likes={image.likes}
+                downloads={image.downloads} tags={image.tags} username={image.user}
+                userImage={image.userImageURL} />
+        });
+        return imagesList;
+    }
 
     return (
         <>
             <div className="d-flex">
-                <h3>Снимки (<NumberFormat value={data.total} displayType={'text'}
+                <h3>Снимки (<NumberFormat value={imagesCount} displayType={'text'}
                     thousandSeparator={" "} isNumericString={true}
                     renderText={value => <>{value}</>} />)</h3>
                 <h3 className="ml-auto">Икони</h3>
@@ -28,14 +49,7 @@ function ImageComponent(props) {
             <hr />
 
             <div className="row">
-                {
-                    data.hits.map(item => (
-                        <ImageModel key={item.id} image={item.largeImageURL}
-                            views={item.views} favorites={item.favorites} likes={item.likes}
-                            downloads={item.downloads} tags={item.tags} username={item.user}
-                            userImage={item.userImageURL} />
-                    ))
-                }
+                {getImages()}
             </div>
         </>
     );
