@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectLang from '../filters/SelectLang';
+import LangFilter from '../filters/LangFilter';
 // import { useSelector, useDispatch } from 'react-redux';
 
 function Filter() {
@@ -10,7 +10,15 @@ function Filter() {
 
     return (
         <>
-            <SelectLang />
+            <div className="d-flex">
+                <h3>Филтър</h3>
+            </div>
+            <hr />
+            <div class="card">
+                <div class="card-body">
+                    <LangFilter />
+                </div>
+            </div>
         </>
     );
 }
