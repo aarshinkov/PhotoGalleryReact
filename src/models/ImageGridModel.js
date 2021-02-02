@@ -1,11 +1,11 @@
 import { Card, Image } from 'react-bootstrap';
 
-const ImageModel = props => {
+const ImageGridModel = props => {
     return (
         // <div className="col-12 col-lg-6 col-xl-4 mb-4">
         <div className="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
             <Card className="shadow-sm">
-                <Card.Img variant="top" src={props.image} />
+                <Card.Img variant="top" src={props.image} target="_blank" />
                 <Card.Body>
                     {/* <Card.Title>Test</Card.Title> */}
                     <div className="card-text">
@@ -30,8 +30,8 @@ const ImageModel = props => {
                             </div>
                             <div className="align-self-center g-px-10">
                                 <h5 className="h6 font-weight-bold">
-                                    <a href="https://pixabay.com/users/enriquelopezgarre-3764790"
-                                        className="text-dark">{props.username}</a>
+                                    <a href={`https://pixabay.com/bg/users/` + props.user + `-` + props.userId}
+                                        className="text-dark" rel="noreferrer" target="_blank">{props.username}</a>
                                 </h5>
                             </div>
                         </div>
@@ -42,4 +42,4 @@ const ImageModel = props => {
     );
 };
 
-export default ImageModel;
+export default ImageGridModel;

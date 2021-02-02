@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const CategoryFilter = (props) => {
 
-    const selectedCategory = useSelector(state => state.selectedCategory);
+    const selectedCategory = useSelector(state => state.selectedFilters.selectedCategory);
     const dispatch = useDispatch();
 
     const changeSelectedCategory = (event) => {

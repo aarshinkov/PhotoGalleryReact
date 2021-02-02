@@ -7,8 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Filter = (props) => {
 
-    const selectedLang = useSelector(state => state.selectedLang);
-    const selectedCategory = useSelector(state => state.selectedCategory);
+    const selectedLang = useSelector(state => state.selectedFilters.selectedLang);
+    const selectedCategory = useSelector(state => state.selectedFilters.selectedCategory);
 
     const dispatch = useDispatch();
 

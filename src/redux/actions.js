@@ -8,16 +8,20 @@ export function setImages(images) {
 export const getImages = params => async dispatch => {
     try {
         const response = await networkClient.get('', params);
-        dispatch(setImages(response.hits));
+        dispatch(setImages(response));
     } catch (error) {
         console.log(error)
     }
 }
 
 export function setSelectedLang(year) {
-    return { type: actions.SET_SELECTED_LANG, payload: year }
+    return { type: actions.SET_SELECTED_LANG, payload: year };
 }
 
 export function setSelectedCategory(category) {
-    return { type: actions.SET_SELECTED_CATEGORY, payload: category }
+    return { type: actions.SET_SELECTED_CATEGORY, payload: category };
+}
+
+export function setListView(isListView) {
+    return { type: actions.SET_LIST_VIEW, payload: isListView };
 }
