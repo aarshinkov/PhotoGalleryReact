@@ -7,7 +7,7 @@ export function setImages(images) {
 
 export const getImages = params => async dispatch => {
     try {
-        const response = await networkClient.get('', params)
+        const response = await networkClient.get('', params);
         dispatch(setImages(response.hits));
     } catch (error) {
         console.log(error)

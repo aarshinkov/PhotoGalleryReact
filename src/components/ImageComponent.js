@@ -5,7 +5,6 @@ import ImageModel from '../models/ImageModel';
 import { useSelector } from 'react-redux';
 
 function ImageComponent(props) {
-
     const images = useSelector(state => state.images);
 
     // const [imagesCount, setImagesCount] = useState(0);
@@ -26,6 +25,7 @@ function ImageComponent(props) {
                 {/* <h3>Снимки (<NumberFormat value={imagesCount} displayType={'text'}
                     thousandSeparator={" "} isNumericString={true}
                     renderText={value => <>{value}</>} />)</h3> */}
+                <h3>Снимки</h3>
                 <h3 className="ml-auto">Икони</h3>
             </div>
             <hr />

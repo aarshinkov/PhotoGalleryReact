@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import LangFilter from '../filters/LangFilter';
 import CategoryFilter from '../filters/CategoryFilter';
-// import { useSelector, useDispatch } from 'react-redux';
+import { Button } from 'react-bootstrap';
+import { getImages } from '../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
-function Filter() {
+const Filter = (props) => {
 
-    // const images = useSelector(state => state.images);
+    const selectedLang = useSelector(state => state.selectedLang);
+    const selectedCategory = useSelector(state => state.selectedCategory);
+    const dispatch = useDispatch();
 
-    // console.log(images);
+    const loadImages = useCallback(() => {
+        dispatch(getImages({
+            lang: selectedLang,
+            category: selectedCategory
+        }));
+    }, [dispatch, selectedLang, selectedCategory]);
+
+    useEffect(() => {
+        loadImages();
+    }, [loadImages]);
+
 
     return (
         <>
@@ -19,6 +33,8 @@ function Filter() {
                 <div className="card-body">
                     <LangFilter />
                     <CategoryFilter />
+
+                    <Button variant="primary">Филтрирай</Button>
                 </div>
             </div>
         </>
