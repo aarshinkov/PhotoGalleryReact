@@ -1,4 +1,6 @@
 import { Image } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faHeart, faThumbsUp, faDownload } from '@fortawesome/free-solid-svg-icons';
 
 const ImageListModel = props => {
     return (
@@ -13,16 +15,16 @@ const ImageListModel = props => {
                         <span>{props.tags}</span>
                     </div>
                     <div>
-                        <i className="far fa-eye text-info" title="Views"></i>
+                        <FontAwesomeIcon icon={faEye} className="mr-1 text-info" />
                         <span title="Views">{props.views}</span>
-                        <span>&bull;</span>
-                        <i className="fas fa-heart text-danger" title="Favorites"></i>
+                        <span className="mx-1">&bull;</span>
+                        <FontAwesomeIcon icon={faHeart} className="mr-1 text-danger" />
                         <span title="Favorites">{props.favorites}</span>
-                        <span>&bull;</span>
-                        <i className="far fa-thumbs-up text-success" title="Likes"></i>
+                        <span className="mx-1">&bull;</span>
+                        <FontAwesomeIcon icon={faThumbsUp} className="mr-1 text-success" />
                         <span title="Likes">{props.likes}</span>
-                        <span>&bull;</span>
-                        <i className="fas fa-download grey-text" title="Downloads"></i>
+                        <span className="mx-1">&bull;</span>
+                        <FontAwesomeIcon icon={faDownload} className="mr-1 gray-text" />
                         <span title="Downloads">{props.downloads}</span>
                     </div>
                     <hr />

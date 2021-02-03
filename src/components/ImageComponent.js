@@ -2,9 +2,10 @@ import React from 'react';
 import ImageGridModel from '../models/ImageGridModel';
 import ImageListModel from '../models/ImageListModel';
 import NumberFormat from 'react-number-format';
-
 import { useSelector, useDispatch } from 'react-redux';
 import { setListView } from '../redux/actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTh, faList } from '@fortawesome/free-solid-svg-icons';
 
 function ImageComponent(props) {
 
@@ -47,6 +48,13 @@ function ImageComponent(props) {
         dispatch(setListView(!isGridView));
     }
 
+    const getListIcon = () => {
+        if (isGridView) {
+            return faList;
+        }
+        return faTh;
+    }
+
     return (
         <>
             <div className="d-flex">
@@ -54,7 +62,9 @@ function ImageComponent(props) {
                     thousandSeparator={" "} isNumericString={true}
                     renderText={value => <>{value}</>} />)</h3>
                 {/* <h3>Снимки</h3> */}
-                <h3 className="ml-auto" onClick={toggleListView}>Икони</h3>
+                <h3 className="ml-auto" onClick={toggleListView}>
+                    <FontAwesomeIcon icon={getListIcon()} style={{cursor: 'pointer'}} />
+                </h3>
             </div>
             <hr />
 
